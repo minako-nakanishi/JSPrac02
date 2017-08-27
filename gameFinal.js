@@ -20,7 +20,9 @@ while (funds > 0 && funds < 100) {
     let bets = { crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0 }; //最初の掛け金は全て0にしておく。配列(kety: value)
     let totalBet = rand(1, funds); //掛け金(最小値1ペンス, 最大値は所持しているペンス)
 
-    if (totalBet == 7) { //もし掛け金(ポッケから出した掛け金)が7の場合
+    if (new Date().getDate === 3) { //もし水曜日なら
+        totalBet = 1; //1ペンス掛ける.
+    } else if (totalBet == 7) { //もし掛け金(ポッケから出した掛け金)が7の場合
         totalBet = funds; //掛け金は(やっぱり)手持ちの資金を全て掛ける.
         bets.heart = totalBet; //ハートに全ての資金を掛ける.
     } else {
