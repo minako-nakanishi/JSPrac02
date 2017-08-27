@@ -21,19 +21,21 @@ while (funds > 0 && funds < 100) {
     let bets = { crown: 0, anchor: 0, heart: 0, spade: 0, club: 0, diamond: 0 }; //最初の掛け金は全て0にしておく。配列(kety: value)
     let totalBet = rand(1, funds); //掛け金(最小値1ペンス, 最大値は所持しているペンス)
 
-    if (new Date().getDay === 3) { //もし水曜日なら
-        totalBet = 1; //1ペンス掛ける.
-    } else if (totalBet == 7) { //もし掛け金(ポッケから出した掛け金)が7の場合
-        totalBet = funds; //掛け金は(やっぱり)手持ちの資金を全て掛ける.
-        bets.heart = totalBet; //ハートに全ての資金を掛ける.
-    } else {
-        let remaining = totalBet; //ポッケから出した掛け金をremainingに格納する.
-        do {
-            let bet = rand(1, remaining); //1から残りの掛け金の乱数をbetに記憶.
-            let face = randFace();
-            bets[face] = bets[face] + bet; //betに格納した掛け金をfaceに記憶されているマス目の掛け金に追加する.
-            remaining = remaining - bet; //掛け金を引く.
-        } while (remaining > 0);
+    switch (totalBet) {
+        case 7:
+            totalBet = funds; //全部掛ける.
+            break;
+        case 13:
+            funds = funds - 1; //1ペンス寄付する.
+        case 11:
+            totalBet = 0; //全く掛けない.
+            break;
+        case 21:
+            totalBet = 21; //21ペンス掛ける.
+            break;
+        default:
+            console.log("縁担ぎは無し")
+            break;
     }
     funds = funds - totalBet; //残りの資金.
     console.log(`掛け金：${totalBet}(` + Object.keys(bets).map(face => `${face}: ${bets[face]}`).join(',') + ")");
