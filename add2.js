@@ -24,3 +24,10 @@ console.log("3" + 5 + 8); //"35" + 8 -> 358
 
 if (undefined) console.log("t");
 else console.log("f");
+
+//短絡評価
+const skipIt = true;
+let j = 0;
+const result = skipIt || j++;
+console.log(result);
+console.log(j);
