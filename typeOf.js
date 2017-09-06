@@ -24,3 +24,27 @@ const { a, b, c } = obj;
 console.log(a);
 console.log(b);
 console.log(c);
+
+const test = { e: 5, f: 6, g: 7 };
+let e, f, g;
+
+({ e, f, g } = test);
+console.log(test);
+
+
+const arr = [1, 2, 3];
+let [h, u] = arr;
+console.log(h); //1
+console.log(u); //2
+
+const tst = [1, 2, 3, 4, 5];
+let [r, p, ...rest] = tst;
+console.log(r);
+console.log(p);
+console.log(rest);
+
+let koko = 80,
+    bubu = 90;
+[koko, bubu] = [bubu, koko];
+console.log(koko);
+console.log(bubu);
