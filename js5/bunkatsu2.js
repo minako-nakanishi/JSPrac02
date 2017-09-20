@@ -23,6 +23,7 @@ console.log(f);
 console.log(g);
 
 
+
 function fruit() {
     return [1, 2];
 }
@@ -31,3 +32,13 @@ var h, i;
 [h, i] = fruit();
 console.log(h); //1
 console.log(i); //2
+
+
+// 返り値の無視
+function veg(){
+  return [1,2,3];
+}
+var [y, ,z] = veg();
+console.log(y);
+console.log(z);
+
