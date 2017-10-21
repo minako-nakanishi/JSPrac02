@@ -14,3 +14,20 @@ const h = function(a, b) { return a + b };
 const h1 = (a, b) => a + b;
 console.log("h " + h);
 console.log("h1 " + h1);
+
+const test = {
+    name: `Ariel`,
+    greetBackwards: function() {
+        const getReverseName = () => { /** アロー関数 */
+            console.log("this " + this);
+            let nameBackwards = '';
+            for (let i = this.name.length - 1; i >= 0; i--) {
+                nameBackwards += this.name[i];
+            }
+            return nameBackwards;
+        } /**ここまでアロー関数 */
+        return `${getReverseName()} si eman ym, olleH`;
+    },
+    /** オブジェクトtestのプロパティgreetBackwardsの値の関数の定義の終わり */
+}; /** オブジェクトの終わり */
+console.log(test.greetBackwards());
