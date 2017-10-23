@@ -15,3 +15,5 @@ function update(birthyear, occupation) {
     this.birthyear = birthyear;
     this.occupation = occupation;
 }
+update.call(jiro, 1985, 'dog');
+console.log(jiro);
