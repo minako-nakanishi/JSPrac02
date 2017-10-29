@@ -9,7 +9,12 @@
 
 <body>
     <h1>ボタンを押す</h1>
-    <button id="button" onclick="alert('ボタンがクリックされました')">ボタン</button>
+    <div>
+        <button id="button1" onclick="alert('ボタンがクリックされました')">ボタン</button>
+    </div>
+    <div>
+        <input type="button" value="ボタン２" onmouseover="this.value='マウスオーバー'" onmouseout="this.value='マウスアップ'">
+    </div>
     <script src="js2/button.js"></script>
 </body>
 
