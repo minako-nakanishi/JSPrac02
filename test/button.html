@@ -7,14 +7,25 @@
 
 </head>
 
-<body>
+<body onload="alert('ようこそ！')">
+
     <h1>ボタンを押す</h1>
     <div>
         <button id="button1" onclick="alert('ボタンがクリックされました')">ボタン</button>
     </div>
     <div>
-        <input type="button" value="ボタン２" onmouseover="this.value='マウスオーバー'" onmouseout="this.value='マウスアップ'">
+        <input type="button" value="ボタン２" onmouseover="this.value='マウスオーバー'" onmouseout="this.value='マウスアウト'">
     </div>
+    <div>
+        <input type="button" value="ボタン3" onmousedown="this.value='マウスダウン'" onmouseup="this.value='マウスアップ'">
+    </div>
+    <div>
+        <input type="button" value="ボタン4" onclick="this.value='クリック'" ondblclick="this.value='ダブルクリック'">
+    </div>
+    <div>
+        <h6 oncontextmenu="alert('wawawawawa'); return false">wawawawaw</h6>
+    </div>
+
     <script src="js2/button.js"></script>
 </body>
 

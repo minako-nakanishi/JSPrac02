@@ -10,3 +10,13 @@ const letter = (function() {
 console.log(letter);
 
 //secretは即時関数のスコープ内では安全であり、外からアクセスできない.
+
+const home = (function() {
+    let count = 0;
+    return function() {
+        return `この関数が呼ばれた回数: ${++count}回`;
+    }
+})();
+console.log(home());
+console.log(home());
+console.log(home());
