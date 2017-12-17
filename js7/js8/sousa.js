@@ -33,3 +33,17 @@ let orange = monkey.slice(-2);
 console.log(orange); //最後から2番目以降の要素の取得[14,15]
 let pear = monkey.slice(1, -2);
 console.log(pear); //monkey[1]から最後から2番目の一つ前まで[12,13]
+
+/** 途中への要素の追加 */
+let gold = [1, 5, 7];
+let silver = gold.splice(1, 0, 2, 3, 4); //第一引数は変更を開始する添え字、第2引数は削除する要素の数、第三引数以降は追加する要素
+console.log(gold); //[ 1, 2, 3, 4, 5, 7 ]
+console.log(silver); //[]
+silver = gold.splice(5, 0, 6);
+console.log(gold); //[ 1, 2, 3, 4, 5, 6, 7 ]
+silver = gold.splice(1, 2);
+console.log(gold); //[ 1, 4, 5, 6, 7 ]
+console.log(silver); //[2,3]
+let platinumn = gold.splice(2, 1, 'a', 'b'); //gold[2]から要素を一つ削除し、そこへa,bを追加する.
+console.log(gold); //[ 1, 4, 'a', 'b', 6, 7 ]
+console.log(platinumn); //[5](削除した要素)
