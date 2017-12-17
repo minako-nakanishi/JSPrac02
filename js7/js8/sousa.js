@@ -31,3 +31,5 @@ let apple = monkey.slice(2, 4);
 console.log(apple); //monkey[2]からmonkey[4]の1つ前まで[13,14]
 let orange = monkey.slice(-2);
 console.log(orange); //最後から2番目以降の要素の取得[14,15]
+let pear = monkey.slice(1, -2);
+console.log(pear); //monkey[1]から最後から2番目の一つ前まで[12,13]
