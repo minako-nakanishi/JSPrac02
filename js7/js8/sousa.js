@@ -47,3 +47,13 @@ console.log(silver); //[2,3]
 let platinumn = gold.splice(2, 1, 'a', 'b'); //gold[2]から要素を一つ削除し、そこへa,bを追加する.
 console.log(gold); //[ 1, 4, 'a', 'b', 6, 7 ]
 console.log(platinumn); //[5](削除した要素)
+
+/** 配列内の要素の削除や置換 */
+let cow = [11, 12, 13, 14];
+let cow2 = cow.copyWithin(1, 2); //第一引数は「どこにコピーするか」。第2引数は「どこからコピーするか」。第三引数はコピーを終了する場所(一つ手前の要素までコピー)
+console.log(cow2); //[ 11, 13, 14, 14 ]
+console.log(cow); //[11,13,14,14]
+console.log(cow.copyWithin(2, 0, 2)); //[11,13,11,13]
+
+console.log([1, 2, 3, 4, 5].copyWithin(0, -2, -1)); //[4,2,3,4,5]
+console.log(cow2); //[11,13,11,13](cowが変更されたため、それを指しているcow2も変更された)
